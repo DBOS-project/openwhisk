@@ -22,7 +22,6 @@
   # Generate hosts files
   - name: gen hosts if 'local' env is used
     local_action: template src="{{playbook_dir}}/environments/local/hosts.j2.ini" dest="{{ playbook_dir }}/environments/local/hosts"
-    when: "'environments/local' in hosts_dir"
 
   - name: find the ip of docker-machine
     local_action: shell "docker-machine" "ip" "{{docker_machine_name | default('whisk')}}"

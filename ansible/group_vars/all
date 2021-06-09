@@ -71,9 +71,9 @@ manifestfile: "{{ manifest_file | default('/ansible/files/runtimes.json') }}"
 runtimesManifest: "{{ runtimes_manifest | default(lookup('file', openwhisk_home ~ '{{ manifestfile }}') | from_json) }}"
 
 limits:
-  invocationsPerMinute: "{{ limit_invocations_per_minute | default(60) }}"
-  concurrentInvocations: "{{ limit_invocations_concurrent | default(30) }}"
-  firesPerMinute: "{{ limit_fires_per_minute | default(60) }}"
+  invocationsPerMinute: "{{ limit_invocations_per_minute | default(99999999) }}"
+  concurrentInvocations: "{{ limit_invocations_concurrent | default(99999999) }}"
+  firesPerMinute: "{{ limit_fires_per_minute | default(99999999) }}"
   sequenceMaxLength: "{{ limit_sequence_max_length | default(50) }}"
 
 # Moved here to avoid recursions. Please do not use outside of controller-dict.
@@ -192,7 +192,7 @@ invoker:
   port: 12001
   heap: "{{ invoker_heap | default('2g') }}"
   arguments: "{{ invoker_arguments | default('') }}"
-  userMemory: "{{ invoker_user_memory | default('2048m') }}"
+  userMemory: "{{ invoker_user_memory | default('26624m') }}"
   # Specify if it is allowed to deploy more than 1 invoker on a single machine.
   allowMultipleInstances: "{{ invoker_allow_multiple_instances | default(false) }}"
   # Specify if it should use docker-runc or docker to pause/unpause containers
