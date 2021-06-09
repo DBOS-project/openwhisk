@@ -19,7 +19,7 @@
 
 - name: set the coordinator to the first node
   set_fact:
-    coordinator: "{{ groups['db'][0] }}"
+    coordinator: "openwhisk-1"
 
 - name: "Set the volumes"
   set_fact:
