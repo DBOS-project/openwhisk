@@ -90,8 +90,8 @@ class InvokerReactive(
         instance,
         Map(
           "--cap-drop" -> Set("NET_RAW", "NET_ADMIN"),
-          "--ulimit" -> Set("nofile=1024:1024"),
-          "--pids-limit" -> Set("1024")) ++ logsProvider.containerParameters)
+          "--ulimit" -> Set("nofile=65536:65536"),
+          "--pids-limit" -> Set("65536")) ++ logsProvider.containerParameters)
   containerFactory.init()
 
   CoordinatedShutdown(actorSystem)

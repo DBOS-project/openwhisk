@@ -56,7 +56,13 @@
                     "attachmentName": "codefile",
                     "attachmentType": "text/plain"
                 },
-                "requireMain": true
+                "requireMain": true,
+                "stemCells": [
+                    {
+                        "initialCount": 4,
+                        "memory": "2048 MB"
+                    }
+                ]
             }
         ]
 
