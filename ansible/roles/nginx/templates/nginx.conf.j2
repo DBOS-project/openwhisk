@@ -1,11 +1,11 @@
 {# this template is used to generate a nginx.conf for booting a nginx server based on the given environment inventory #}
 
-worker_processes {{ nginx.wpn.router }};
-worker_rlimit_nofile 4096;
+worker_processes 16;
+worker_rlimit_nofile 65536;
 
 events {
 {# default: 1024 #}
-    worker_connections 4096;
+    worker_connections 65536;
 }
 
 http {
