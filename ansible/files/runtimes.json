@@ -48,21 +48,15 @@
                 "default": true,
                 "image": {
                     "prefix": "openwhisk",
-                    "name": "java8action",
-                    "tag": "1.15.0"
+                    "name": "actionloop-java-v8",
+                    "tag": "nightly"
                 },
                 "deprecated": false,
                 "attached": {
                     "attachmentName": "codefile",
                     "attachmentType": "text/plain"
                 },
-                "requireMain": true,
-                "stemCells": [
-                    {
-                        "initialCount": 4,
-                        "memory": "2048 MB"
-                    }
-                ]
+                "requireMain": true
             }
         ]
 
