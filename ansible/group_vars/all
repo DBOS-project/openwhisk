@@ -108,7 +108,7 @@ controller:
   loglevel: "{{ controller_loglevel | default(whisk_loglevel) | default('INFO') }}"
   entitlement:
     spi: "{{ controller_entitlement_spi | default('') }}"
-  protocol: "{{ controller_protocol | default('https') }}"
+  protocol: "{{ controller_protocol | default('http') }}"
   ssl:
     cn: openwhisk-controllers
     keyPrefix: "{{ __controller_ssl_keyPrefix }}"
